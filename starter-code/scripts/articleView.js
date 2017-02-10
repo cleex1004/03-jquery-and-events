@@ -73,9 +73,14 @@ articleView.setTeasers = function() {
     1. Prevent the default action of a link.
     2. Reveal everything in that particular article now.
     3. Hide that read-on link!
-
     // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
   */
+
+  $('.read-on').on('click', function(event) {
+    event.preventDefault();
+    $(event.target).prev().children().fadeIn();
+    $(event.target).hide();
+  });
 };
 
 // TODO: Invoke all of the above functions (I mean, methods!):
@@ -83,3 +88,4 @@ articleView.populateFilters();
 articleView.handleAuthorFilter();
 articleView.handleCategoryFilter();
 articleView.handleMainNav();
+articleView.setTeasers();
